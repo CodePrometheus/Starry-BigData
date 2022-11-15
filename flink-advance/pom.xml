@@ -3,13 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>Starry-Flink</artifactId>
-        <groupId>com.star</groupId>
+        <artifactId>Starry-BigData</artifactId>
+        <groupId>com.star.bigdata</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.star.advance</groupId>
     <artifactId>flink-advance</artifactId>
+    <version>1.0</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

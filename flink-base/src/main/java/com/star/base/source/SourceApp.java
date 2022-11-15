@@ -8,6 +8,11 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.util.NumberSequenceIterator;
 
 /**
+ * 1.基于本地集合的 source
+ * 2.基于文件的 source
+ * 3.基于网络套接字的 source
+ * 4.自定义的source
+ *
  * @Author: zzStar
  * @Date: 08-05-2021 22:07
  */

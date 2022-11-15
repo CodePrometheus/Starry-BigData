@@ -25,13 +25,13 @@ public class TransformationApp {
         // mapStream(env);
         // filter(env);
         // flatMap(env);
-        // keyBy(env);
-        reduce(env);
+        keyBy(env);
+        // reduce(env);
         env.execute("TransformationApp");
     }
 
     /**
-     * wc
+     * reduce
      *
      * @param env
      */
@@ -59,6 +59,11 @@ public class TransformationApp {
     }
 
 
+    /**
+     * keyBy
+     *
+     * @param env
+     */
     public static void keyBy(StreamExecutionEnvironment env) {
         DataStreamSource<String> source = env.readTextFile("data/access.log");
         SingleOutputStreamOperator<Access> map = source.map((MapFunction<String, Access>) value -> {
@@ -73,6 +78,11 @@ public class TransformationApp {
         map.keyBy(k -> k.getDomain()).sum("traffic").print();
     }
 
+    /**
+     * flatMap
+     *
+     * @param env
+     */
     public static void flatMap(StreamExecutionEnvironment env) {
         DataStreamSource<String> source = env.socketTextStream("localhost", 9527);
         source.flatMap(new FlatMapFunction<String, String>() {
@@ -105,6 +115,11 @@ public class TransformationApp {
         filter.print();
     }
 
+    /**
+     * map
+     *
+     * @param env
+     */
     public static void map(StreamExecutionEnvironment env) {
         DataStreamSource<String> source = env.readTextFile("data/access.log");
         SingleOutputStreamOperator<Access> map = source.map((MapFunction<String, Access>) value -> {
@@ -124,3 +139,6 @@ public class TransformationApp {
     }
 
 }
+
+
+
